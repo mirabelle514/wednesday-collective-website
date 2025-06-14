@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import HomePage from './components/HomePage';
+import WorkPage from './components/WorkPage';
+import ContactPage from './components/ContactPage';
 
-function App() {
+const App = () => {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const navigateTo = (page) => {
+    setCurrentPage(page);
+  };
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'work':
+        return <WorkPage navigateTo={navigateTo} />;
+      case 'contact':
+        return <ContactPage navigateTo={navigateTo} />;
+      default:
+        return <HomePage navigateTo={navigateTo} />;
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {renderPage()}
     </div>
   );
-}
+};
 
 export default App;
