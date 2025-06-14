@@ -95,11 +95,7 @@ wednesday-collective-website/
    npm install
    ```
 
-3. **Configure environment**
-   - Get your Google reCAPTCHA site key from [Google reCAPTCHA Admin](https://www.google.com/recaptcha/admin)
-   - Replace `YOUR_SITE_KEY_HERE` in `ContactPage.jsx` with your actual site key
-
-4. **Start development server**
+3. **Start development server**
    ```bash
    npm start
    ```
